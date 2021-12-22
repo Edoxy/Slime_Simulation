@@ -11,6 +11,8 @@
 		E6D06C3327736D03004B5F29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D06C3227736D03004B5F29 /* ViewController.swift */; };
 		E6D06C3527736D03004B5F29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6D06C3427736D03004B5F29 /* Assets.xcassets */; };
 		E6D06C3827736D03004B5F29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D06C3627736D03004B5F29 /* Main.storyboard */; };
+		E6D06C4027736DD1004B5F29 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D06C3F27736DD1004B5F29 /* MainView.swift */; };
+		E6D06C4227736E72004B5F29 /* Shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = E6D06C4127736E72004B5F29 /* Shader.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		E6D06C3427736D03004B5F29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6D06C3727736D03004B5F29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6D06C3927736D03004B5F29 /* Slime_simulation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Slime_simulation.entitlements; sourceTree = "<group>"; };
+		E6D06C3F27736DD1004B5F29 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E6D06C4127736E72004B5F29 /* Shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shader.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +56,13 @@
 		E6D06C2F27736D03004B5F29 /* Slime_simulation */ = {
 			isa = PBXGroup;
 			children = (
+				E6D06C3F27736DD1004B5F29 /* MainView.swift */,
 				E6D06C3027736D03004B5F29 /* AppDelegate.swift */,
 				E6D06C3227736D03004B5F29 /* ViewController.swift */,
 				E6D06C3427736D03004B5F29 /* Assets.xcassets */,
 				E6D06C3627736D03004B5F29 /* Main.storyboard */,
 				E6D06C3927736D03004B5F29 /* Slime_simulation.entitlements */,
+				E6D06C4127736E72004B5F29 /* Shader.metal */,
 			);
 			path = Slime_simulation;
 			sourceTree = "<group>";
@@ -131,7 +137,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D06C4227736E72004B5F29 /* Shader.metal in Sources */,
 				E6D06C3327736D03004B5F29 /* ViewController.swift in Sources */,
+				E6D06C4027736DD1004B5F29 /* MainView.swift in Sources */,
 				E6D06C3127736D03004B5F29 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
