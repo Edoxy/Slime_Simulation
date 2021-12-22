@@ -59,13 +59,13 @@ class MainView: MTKView {
         for _ in 0..<particleCount{
             let a = Float.random(in: 0...(3.1415*2))
             let c = Int.random(in: 0...1)
-            let color = SIMD4<Float>(Float.random(in: 0...1), Float.random(in: 0...1), Float.random(in: 0.8...1), 1)
-            if c > 0 { //color = float4(1, 1, 1, 1)
-                
+            var color = SIMD4<Float>(0 * Float.random(in: 0...1), Float.random(in: 0...1), Float.random(in: 0...1), 1)
+            if c > 0 {
+                color =  SIMD4<Float>(Float.random(in: 0...1), Float.random(in: 0...1), 0 * Float.random(in: 0.8...1), 1)
             }
             let particle = Particle(color: color,
-                                    position: Float.random(in: 0...1*(Float(min(h, w)/2) - 1)) * SIMD2<Float>(cos(a), sin(a)) + SIMD2<Float>(Float(w)/2, Float(h)/2),
-                                    angle: a +  1*Float.random(in: 0...3.1415) - 0 * 3.1415)
+                                    position: Float.random(in: 0...0*(Float(min(h, w)/2) - 1)) * SIMD2<Float>(cos(a), sin(a)) + SIMD2<Float>(Float(w)/2, Float(h)/2),
+                                    angle: a +  0*Float.random(in: 0...3.1415) - 1 * 3.1415)
             particles.append(particle)
         }
         particleBuffer = device?.makeBuffer(bytes: particles, length: MemoryLayout<Particle>.stride * particleCount, options: .storageModeManaged)

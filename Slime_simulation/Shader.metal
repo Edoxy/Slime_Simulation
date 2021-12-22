@@ -38,13 +38,13 @@ kernel void clear_pass_func(texture2d<half, access::read_write> tex [[ texture(0
     
     //MARK: media per sfumare la scia
     half4 sum = 0;
-//    sum +=tex.read(id + uint2(1, 0));
-//    sum +=tex.read(id - uint2(1, 0));
-//    sum +=tex.read(id + uint2(0, 1));
-//    sum +=tex.read(id - uint2(0, 1));
+    sum +=tex.read(id + uint2(1, 0));
+    sum +=tex.read(id - uint2(1, 0));
+    sum +=tex.read(id + uint2(0, 1));
+    sum +=tex.read(id - uint2(0, 1));
     sum += tex.read(id);
     
-    half4 color = sum/(1.1);
+    half4 color = sum/(5.3);
     if (abs(color.x) + abs(color.y) + abs(color.z) < 0.15)
     {
         color = half4(0, 0, 0, 1);
@@ -89,21 +89,21 @@ kernel void draw_dots_func(device Particle *particles [[ buffer(0) ]],
     
     //MARK: ADD sensor code
     //ampiezza vedute
-    const float sensor_angle = M_PI_F/9;
+    const float sensor_angle = M_PI_F/6;
     //capacità di cambiare direzione
-    const float turn_angle = M_PI_F/20;
+    const float turn_angle = M_PI_F/15;
     //piccolo o grande
     const int sensor_size = 1;
     //lungimiranza
-    const uint sensor_distance = 70;
+    const uint sensor_distance = 10;
     //
     const float stear_randomnes = 1;
-    int color1 = 0;
+    int color1 = 2;
     int color2 = 0;
     if (particle.color.x > 0)
     {
         color1 = 0;
-        color2 = 0;
+        color2 = 2;
     }
     
     //Left sensor
@@ -149,7 +149,7 @@ kernel void draw_dots_func(device Particle *particles [[ buffer(0) ]],
     //float random = rand(position.x, position.y, angle);
     random = cos(random * 3.1415);
     
-    const float acc = 0;
+    const float acc = 0.41;
     if (left_sum > center_sum && left_sum > right_sum)
     {
         angle += turn_angle - turn_angle  * stear_randomnes * random;
